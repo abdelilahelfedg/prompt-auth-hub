@@ -47,6 +47,77 @@ export type Database = {
         }
         Relationships: []
       }
+      properties: {
+        Row: {
+          advanced_details: Json | null
+          charges: number
+          created_at: string
+          description: string
+          exact_address: string
+          id: string
+          neighborhood: string
+          owner_id: string
+          pdf_plan_url: string | null
+          phone: string
+          photos: string[] | null
+          price: number
+          property_type: string
+          public_description: string
+          real_surface: number
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          advanced_details?: Json | null
+          charges: number
+          created_at?: string
+          description: string
+          exact_address: string
+          id?: string
+          neighborhood: string
+          owner_id: string
+          pdf_plan_url?: string | null
+          phone: string
+          photos?: string[] | null
+          price: number
+          property_type?: string
+          public_description: string
+          real_surface: number
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          advanced_details?: Json | null
+          charges?: number
+          created_at?: string
+          description?: string
+          exact_address?: string
+          id?: string
+          neighborhood?: string
+          owner_id?: string
+          pdf_plan_url?: string | null
+          phone?: string
+          photos?: string[] | null
+          price?: number
+          property_type?: string
+          public_description?: string
+          real_surface?: number
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "properties_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

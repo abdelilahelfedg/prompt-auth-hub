@@ -13,6 +13,18 @@ const Index = () => {
           Your premier platform for real estate and property management
         </p>
         
+        <div className="space-y-4 mb-8">
+          <Button asChild size="lg">
+            <Link to="/properties">Voir les propriétés</Link>
+          </Button>
+          
+          <div className="flex gap-4 justify-center">
+            <Button variant="outline" asChild>
+              <Link to="/pricing">Plans & Tarifs</Link>
+            </Button>
+          </div>
+        </div>
+        
         {user && profile ? (
           <div className="space-y-4">
             <p className="text-lg">Welcome back, {profile.display_name || user.email}!</p>
